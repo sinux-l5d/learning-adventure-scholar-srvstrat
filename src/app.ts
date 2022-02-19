@@ -5,6 +5,8 @@ import express from 'express';
  */
 const app = express();
 
+app.use(express.json());
+
 // Désactive le header indiquant que c'est une application express
 app.disable('x-powered-by');
 
