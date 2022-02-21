@@ -42,7 +42,8 @@
     "prepare": "husky install"
   },
   "_moduleAliases": {
-    "@app": "build/app"
+    "@app": "build/app",
+    "@type": "build/type"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

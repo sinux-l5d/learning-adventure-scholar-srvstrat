@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import exerciceRouter from './exercice.route';
+import strategieRouter from './strategie.route';
 
 /**
  * Routeur global de l'application. Utilise les routeurs des ressources.
  */
 const globalRouter = Router();
 
-globalRouter.use('/exercices/', exerciceRouter);
+globalRouter.use('/strategie/', strategieRouter);
 
 export default globalRouter;
