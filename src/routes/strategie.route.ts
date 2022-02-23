@@ -12,7 +12,7 @@ const serviceRouter = Router();
 const getIdNext: RequestHandler = async (req, res) => {
   const id = req.params.id;
   // On recupère l'id suivant (en dur pour l'instant)
-  const idSuivant = await StrategieService.getIdNextSimpleById(id);
+  const idSuivant = StrategieService.getIdNextSimpleById(id);
   res.status(200).json({ next: idSuivant });
 };
 
