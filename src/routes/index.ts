@@ -6,6 +6,6 @@ import strategieRouter from './strategie.route';
  */
 const globalRouter = Router();
 
-globalRouter.use('/strategie/', strategieRouter);
+globalRouter.use('/next', strategieRouter);
 
 export default globalRouter;

@@ -11,7 +11,7 @@ app.use(express.json());
 // Désactive le header indiquant que c'est une application express
 app.disable('x-powered-by');
 
-app.use(globalRouter);
+app.use('/', globalRouter);
 
 // TODO: Gerer les le middlewares d'erreurs
 // app.use(handleMiddlewareErrors);
