@@ -18,7 +18,9 @@
     "baseUrl": "./",
     "paths": {
       "@app": ["src/app"],
-      "@type/*": ["src/type/*"]
+      "@type/*": ["src/type/*"],
+      "@repositories/*": ["src/repositories/*"],
+      "@services/*": ["src/services/*"]
     }
   },
   "include": ["src/**/*.ts", "spec/**/*.ts"],

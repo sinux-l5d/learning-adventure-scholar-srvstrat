@@ -1,5 +1,5 @@
 import { Router, RequestHandler } from 'express';
-import { StrategieService } from 'src/services/strategie.service';
+import { StrategieService } from '@services/strategie.service';
 
 const serviceRouter = Router();
 
