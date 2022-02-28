@@ -4,6 +4,8 @@ import { ExerciceId } from '@type/exercice/ExerciceId';
  * Service de stratégie
  */
 export class StrategieService {
+  public static readonly listeExo = ['exo1', 'exo2', 'exo3'];
+
   /**
    *
    * @param id ID de l'exercice courant.
@@ -14,10 +16,13 @@ export class StrategieService {
     // dans le tableau des ID prendre le suivant
     // pour simplifier envoyer toujours le même suivant
     // coder en dur ici
-    const listeExo = ['exo1', 'exo2', 'exo3'];
+
+    if (id === 'init') {
+      return this.listeExo[0];
+    }
 
     let res = null;
-    listeExo.forEach((value, index, array) => {
+    this.listeExo.forEach((value, index, array) => {
       if (value === id) {
         // si out range return null sinon renvoie l'id suivant
         res = array[index + 1] ?? null;
