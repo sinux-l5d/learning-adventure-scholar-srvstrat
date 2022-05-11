@@ -18,9 +18,13 @@
     "baseUrl": "./",
     "paths": {
       "@app": ["src/app"],
+      "@helpers/*": ["src/helpers/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@routes/*": ["src/routes/*"],
+      "@routes": ["src/routes/index"],
+      "@services/*": ["src/services/*"],
       "@type/*": ["src/type/*"],
-      "@repositories/*": ["src/repositories/*"],
-      "@services/*": ["src/services/*"]
+      "@config": ["src/config"]
     }
   },
   "include": ["src/**/*.ts", "spec/**/*.ts"],
