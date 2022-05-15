@@ -1,6 +1,7 @@
 import express from 'express';
 import { handleMiddlewareErrors } from '@middlewares/error.middleware';
 import globalRouter from '@routes';
+import config from '@config';
 
 /**
  * Application express gérant les appelles aux fonctions en fonction du chemin
@@ -8,6 +9,9 @@ import globalRouter from '@routes';
 const app = express();
 
 app.use(express.json());
+
+// Désactive le header indiquant que c'est une application express
+app.disable('x-powered-by');
 
 app.use(function (_req, res, next) {
   // Website you wish to allow to connect
@@ -23,17 +27,9 @@ app.use(function (_req, res, next) {
   next();
 });
 
-// Désactive le header indiquant que c'est une application express
-app.disable('x-powered-by');
+app.use(config.APP_ROOT ?? '/', globalRouter);
 
-app.use('/', globalRouter);
-
+// Doit être en dernier
 app.use(handleMiddlewareErrors);
 
-// TODO: Gerer les le middlewares d'erreurs
-// app.use(handleMiddlewareErrors);
-
-/**
- * Application hydraté avec tout les middlewares
- */
 export default app;
