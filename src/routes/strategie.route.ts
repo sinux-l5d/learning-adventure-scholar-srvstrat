@@ -9,16 +9,18 @@ const serviceRouter = Router();
  * @param req Objet Request d'Express
  * @param res Object Response d'Express
  */
-const getIdNext: RequestHandler = async (req, res, next) => {
-  const id = req.params.id;
-  // On recupère l'id suivant (en dur pour l'instant)
-  StrategieService.getIdNextSimpleById(id)
-    .then((idSuivant) => {
-      res.status(200).json({ next: idSuivant });
-    })
-    .catch(next);
+const getNextId: RequestHandler = async (req, res, next) => {
+  const { strategie, exerciceCourant, exercices } = req.body;
+  let idSuivant;
+  try {
+    idSuivant = StrategieService.getNextId(strategie, exerciceCourant, exercices);
+    res.status(200).json({ id: idSuivant });
+  } catch (error) {
+    next(error);
+  }
+
 };
 
-serviceRouter.get('/:id', getIdNext);
+serviceRouter.post('/', getNextId);
 
 export default serviceRouter;
