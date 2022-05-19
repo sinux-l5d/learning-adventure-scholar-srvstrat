@@ -4,6 +4,6 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - '${APP_PORT_EXT:-3002}:3002'
+      - '${APP_PORT_EXT:-3002}:3003'
     environment:
       APP_ROOT: '${APP_ROOT:-/}'
