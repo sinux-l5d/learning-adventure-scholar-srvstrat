@@ -1,9 +1,15 @@
 version: '3.3'
 services:
-  app:
+  srvstrat:
     build: .
     restart: unless-stopped
     ports:
-      - '${APP_PORT_EXT:-3003}:3003'
+      - '${APP_PORT_EXT:-3002}:3002'
     environment:
       APP_ROOT: '${APP_ROOT:-/}'
+    networks:
+      - lawebnetwork
+
+networks:
+  lawebnetwork:
+    name: ${APP_NETWORK_NAME:-lawebnetwork}
