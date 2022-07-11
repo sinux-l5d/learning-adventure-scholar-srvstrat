@@ -18,7 +18,6 @@ const getNextId: RequestHandler = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-
 };
 
 serviceRouter.post('/', getNextId);
